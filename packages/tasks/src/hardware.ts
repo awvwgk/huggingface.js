@@ -15,8 +15,6 @@ export const TFLOPS_THRESHOLD_WHITE_HOUSE_CLUSTER = 10 ** 8;
  */
 export const TFLOPS_THRESHOLD_EU_AI_ACT_MODEL_TRAINING_TOTAL = 10 ** 13;
 
-export type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
-
 export interface HardwareSpec {
 	/**
 	 * Approximate value, in FP16 whenever possible for GPUs and FP32 for CPUs.
@@ -45,7 +43,7 @@ export interface HardwareSpec {
 	 * "Ryzen Zen 4 7000 (Ryzen 9)"), this is the tray/box price of a
 	 * representative flagship SKU at launch.
 	 */
-	msrp?: number;
+	msrp: number;
 }
 
 export const DEFAULT_MEMORY_OPTIONS = [
@@ -91,18 +89,23 @@ export const SKUS = {
 		QUALCOMM: {
 			"Snapdragon X Elite X1E-00-1DE": {
 				tflops: 4.6,
+				msrp: 900,
 			},
 			"Snapdragon X Elite X1E-84-100": {
 				tflops: 4.6,
+				msrp: 1_700,
 			},
 			"Snapdragon X Elite X1E-80-100": {
 				tflops: 3.8,
+				msrp: 1_300,
 			},
 			"Snapdragon X Elite X1E-78-100": {
 				tflops: 3.8,
+				msrp: 1_200,
 			},
 			"Snapdragon X Plus X1P-64-100": {
 				tflops: 3.8,
+				msrp: 1_000,
 			},
 		},
 	},
